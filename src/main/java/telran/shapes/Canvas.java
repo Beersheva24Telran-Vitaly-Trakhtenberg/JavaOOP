@@ -6,9 +6,6 @@ public class Canvas  implements Shape
 {
     Shape[] shapes;
 
-    private int perimeter = 0;
-    private int square = 0;
-
     public Canvas()
     {
         shapes = new Shape[0];
@@ -17,8 +14,6 @@ public class Canvas  implements Shape
     public void addShape(Shape shape)
     {
         this.shapes = Arrays.insert(shapes, shapes.length, shape);
-        this.square += shape.square();
-        this.perimeter += shape.perimiter();
     }
 
     public Shape[] getShapes()
@@ -29,12 +24,22 @@ public class Canvas  implements Shape
     @Override
     public int perimiter()
     {
-        return this.perimeter;
+        int perimeter = 0;
+        int length = shapes.length;
+        for (int i=0; i<length; i++) {
+            perimeter += shapes[i].perimiter();
+        }
+        return perimeter;
     }
 
     @Override
     public int square()
     {
-        return this.square;
+        int square = 0;
+        int length = shapes.length;
+        for (int i=0; i<length; i++) {
+            square += shapes[i].square();
+        }
+        return square;
     }
 }
