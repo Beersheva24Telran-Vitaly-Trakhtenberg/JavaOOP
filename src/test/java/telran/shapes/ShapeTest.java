@@ -2,7 +2,6 @@ package telran.shapes;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import telran.shapes.*;
 
 public class ShapeTest
 {
