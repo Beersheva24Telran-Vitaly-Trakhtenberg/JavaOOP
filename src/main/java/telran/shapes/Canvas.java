@@ -42,4 +42,17 @@ public class Canvas  implements Shape
         }
         return square;
     }
+
+    public int count()
+    {
+        int count = 0;
+        for (Shape sh : shapes) {
+            if (sh instanceof Canvas) {
+                count += 1 + ((Canvas) sh).count();
+            } else {
+                count++;
+            }
+        }
+        return count;
+    }
 }
