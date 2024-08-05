@@ -43,6 +43,10 @@ public class Canvas  implements Shape
         return square;
     }
 
+    /**
+     *
+     * @return number of all shapes in a canvas object
+     */
     public int count()
     {
         int count = 0;
