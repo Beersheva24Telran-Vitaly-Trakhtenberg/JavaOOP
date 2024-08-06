@@ -52,10 +52,9 @@ public class Canvas  implements Shape
         int count = 0;
         for (Shape sh : shapes) {
             if (sh instanceof Canvas) {
-                count += 1 + ((Canvas) sh).count();
-            } else {
-                count++;
+                count += ((Canvas) sh).count();
             }
+            count++;
         }
         return count;
     }
